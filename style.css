@@ -1,0 +1,93 @@
+
+*{
+
+    font-family: 'Karla', sans-serif;
+}
+
+
+h1, h2, h3, .h1, .h2, .h3{
+
+    font-family: 'Lobster Two', cursive;
+
+}
+
+
+
+
+.root{
+
+    --primary:#e3d5ca;
+    --secondary:#6d6875;
+    --darkC:#22223b;
+    --lightc:#f4f1de;
+
+}
+
+
+.text-primaryC{
+
+    color: #e3d5ca;
+}
+
+.text-secondaryC{
+
+    color:#22223b;
+}
+
+.background-primaryC{
+
+    background-color: #e3d5ca;
+}
+
+
+.headerCustom{
+    
+    background: linear-gradient(145deg,rgba(36, 36, 66, 0.116), rgb(230, 227, 250)), url(./media/header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+
+}
+
+
+.btn-Custom{
+
+    background-color: #6d6875;
+    color: #e3d5ca;
+    transition: 0.5s;
+
+}
+
+
+.btn-Custom:hover{
+    background-color: rgb(34, 34, 59);
+    color: #f4f1de;
+
+
+}
+
+
+.logoA{
+    width: 45px;
+
+
+}
+
+
+.freccia{
+
+    color: #6d6875;
+
+
+}
+
+#navIcon{
+    transition: 0.5s;
+}
+
+#mainNavbar{
+
+    transition: 0.5s;
+    height: 70px;
+}
