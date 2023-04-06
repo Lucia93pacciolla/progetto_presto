@@ -61,3 +61,70 @@ window.addEventListener('scroll',()=>{
 
 })
 
+
+
+function createInterval(finalNumber, element){
+
+    let counter = 0
+
+    let interval = setInterval(()=>{
+
+        
+        
+        if(counter < finalNumber){
+            
+            counter++
+            element.innerHTML = counter;
+
+        }else{
+            
+            clearInterval(interval);
+
+        }
+
+        
+
+
+    }, 1)
+}
+
+let firstspan = document.querySelector('#first-span');
+
+let secondspan = document.querySelector('#second-span');
+
+let thirdspan = document.querySelector('#third-span');
+
+
+
+
+
+
+let titolo = document.querySelector('#titolo');
+
+let check = true;
+
+let observed = new IntersectionObserver(
+    
+    (entries)=>{
+        
+        entries.forEach((entry)=>{
+            
+            if(entry.isIntersecting && check == true){
+                
+                createInterval(1500, firstspan );
+                
+                createInterval(100, secondspan );
+                
+                createInterval(800, thirdspan );
+
+                check = false;
+                
+            }
+        })
+
+
+    }
+)
+
+
+observed.observe(titolo);
