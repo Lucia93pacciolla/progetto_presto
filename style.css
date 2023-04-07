@@ -21,6 +21,7 @@ h1, h2, h3, p, .h1, .h2, .h3, p{
     --darkC:#22223b;
     --lightc:#f4f1de;
     --sfondo:#eae4e9;
+    --grigio:#9a8c98;
 
 }
 
@@ -28,6 +29,16 @@ h1, h2, h3, p, .h1, .h2, .h3, p{
 .text-primaryC{
 
     color: #e3d5ca;
+}
+
+.background-primaryB{
+
+    background-color: #e3d5ca;
+}
+
+.text-grigio{
+
+    color: #6d6875;
 }
 
 .text-secondaryC{
@@ -38,6 +49,11 @@ h1, h2, h3, p, .h1, .h2, .h3, p{
 .background-primaryC{
 
     background-color: #eae4e9;
+}
+
+.background-secondaryC{
+
+    background-color: #9a8c98;
 }
 
 body{
@@ -124,4 +140,33 @@ body{
     align-items: center;
     justify-content: center;
     background-color: white;
+  }
+
+  .col-custom{
+
+    border: 3px solid #22223b;
+    color: #22223b;
+    padding: 30px;
+    border-radius: 10px;
+    transition: 0.4s;
+
+  }
+
+  .col-custom:hover{
+
+    background-color: #e3d5ca;
+    color: #6d6875;
+    transform: scale(1.2);
+  }
+
+  @media  screen and(max-width: 900px){
+
+    .col-custom:hover{
+
+        transform:scale(1.2)
+
+    }
+
+   
+    
   }
