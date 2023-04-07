@@ -184,10 +184,10 @@
 
         let reviews = [
 
-            {name : 'Alessio', quote : 'Finalmente uno store online Vintage'},
-            {name : 'Maria', quote : 'Spedizione veloce e reso gratuito'},
-            {name : 'Francesca', quote : 'Ho ordinato una musicassetta vintage ma non funzionava'},
-            {name : 'Manuel', quote : 'Assistenza impeccabile'},
+            {name : 'Alessio', quote : 'Finalmente uno store online Vintage' , vote : 5},
+            {name : 'Maria', quote : 'Spedizione veloce e reso gratuito' , vote : 5},
+            {name : 'Francesca', quote : 'Ho ordinato una musicassetta vintage ma non funzionava' , vote: 2},
+            {name : 'Manuel', quote : 'Assistenza impeccabile' , vote : 4},
 
         ];
 
@@ -205,6 +205,12 @@
 
                       <h3>${recensione.name}</h3>
                       <p class="text-center p-2">${recensione.quote}</p>
+                      
+                      <div class"d-flex">
+
+                        ${createStars(recensione.vote)}
+
+                      </div>
 
                   </div>
           
@@ -216,7 +222,30 @@
         })
 
 
+        function createStars (fullStars){
 
+          let final = '';
+
+          for(let i = 1; i <= 5; i++){
+
+            if(fullStars >= i){
+
+              final += `<i class="fa-solid fa-star"></i>`;
+
+
+            }else {
+
+              final += `<i class="fa-regular fa-star"></i>`;
+            }
+
+
+
+          }
+
+          return final;
+
+
+        }
       
 
 
@@ -228,6 +257,31 @@
           // Optional parameters
           loop: true,
 
+          // effect: "coverflow",
+          // grabCursor: true,
+          // centeredSlides: true,
+          // slidesPerView: 3,
+          // coverflowEffect: {
+          //     rotate: 50,
+          //     stretch: 0,
+          //     depth: 100,
+          //     modifier: 1,
+          //     slideShadows: false,
+          // },
+
+          // breakpoints: {
+          //   400: {
+          //     slidesPerView: 3,
+            
+          //   },
+          
+          // },
+
+
+
+
+    
+
           // If we need pagination
           pagination: {
             el: '.swiper-pagination',
@@ -238,6 +292,8 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },
+
+    
 
           // And if we need scrollbar
           scrollbar: {
