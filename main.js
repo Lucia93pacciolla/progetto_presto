@@ -128,3 +128,63 @@ let observed = new IntersectionObserver(
 
 
 observed.observe(titolo);
+
+
+
+
+let camioncini = document.querySelectorAll('.fa-truck-fast');
+
+let columns = document.querySelectorAll('.col-custom');
+
+let columnsConfirm = false;
+
+
+
+columns.forEach((colonna, i)=>{
+
+    colonna.addEventListener('mouseenter', ()=>{
+
+        if(columnsConfirm == false){
+
+            camioncini[i].classList.remove('text-grigio');
+            camioncini[i].classList.add('text-secondaryC');
+
+        }else{
+
+            camioncini[i].classList.remove('text-primaryC');
+
+        }
+
+
+
+    })
+
+    colonna.addEventListener('mouseleave', ()=>{
+
+        if(columnsConfirm == false){
+
+            camioncini[i].classList.remove('text-secondaryC');
+            camioncini[i].classList.add('text-primaryC');
+            
+            
+            
+            columnsConfirm = true;
+            
+        }else{
+            
+            
+            camioncini[i].classList.add('text-grigio');
+            
+
+
+
+
+            columnsConfirm = false;
+        }
+
+
+    })
+
+    
+    
+});

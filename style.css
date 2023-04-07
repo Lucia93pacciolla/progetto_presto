@@ -56,6 +56,11 @@ h1, h2, h3, p, .h1, .h2, .h3, p{
     background-color: #9a8c98;
 }
 
+.background-dark{
+
+    background-color: #22223b;
+}
+
 body{
 
     background-color: #eae4e9;
@@ -169,4 +174,24 @@ body{
 
    
     
+  }
+
+
+  .min-h{
+
+    min-height: 60px;
+  }
+
+  .footer-link{
+
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #e3d5ca;
+  }
+
+
+  .footer-link:hover{
+
+    color: white;
   }
