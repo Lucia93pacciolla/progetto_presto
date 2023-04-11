@@ -195,3 +195,28 @@ body{
 
     color: white;
   }
+
+
+
+
+
+
+.announcement-card{
+
+    width: 100;
+    min-height: 300px;
+    border: 4px solid #22223b;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.inputNumber{
+
+    color: #22223b;
+    size: 30px;
+    font-weight: 800;
+}
