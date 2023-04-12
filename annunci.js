@@ -133,7 +133,7 @@ function showCards(array){
     
     array.sort ((a,b) => Number(b.price - a.price));
 
-    array.forEach((element)=>{
+    array.forEach((element, i)=>{
 
         let div = document.createElement('div');
 
@@ -142,6 +142,8 @@ function showCards(array){
         div.innerHTML = `
 
                     <div class="announcement-card">
+
+                    <img class="img-card-custom" src="https://picsum.photos/${200+i}" alt="">
 
                         <p class="h3">${element.name}</p>
                         <p>${element.category}</p>
@@ -168,18 +170,26 @@ showCards(data);
 
 
 
-function filterByCategory(categoria){
+function filterByCategory(array){
+
+    let arrayFromNodelist = Array.from(checkInputs);
+
+    let button = arrayFromNodelist.find((bottone)=> bottone.checked);
+
+    let categoria = button.id;
+
+    // console.log(categoria);
 
     if(categoria != 'All'){
 
 
-        let filtered = data.filter((annuncio)=> annuncio.category == categoria);
+        let filtered = array.filter((annuncio)=> annuncio.category == categoria);
     
-        showCards(filtered);
+        return filtered;
 
     }else{
 
-        showCards(data);
+        return data;
     }
 
 
@@ -194,7 +204,7 @@ checkInputs.forEach((checkInput)=>{
 
     checkInput.addEventListener('click', () =>{
 
-        filterByCategory(checkInput.id);
+        globalFilter();
 
 
 
@@ -216,7 +226,7 @@ function setInputPrice(){
 
     inputPrice.max = maxPrice;
 
-    console.log(Math.ceil(maxPrice));
+    inputPrice.value = (Math.ceil(maxPrice));
 
     incrementNumber.innerHTML = Math.ceil(maxPrice);
 
@@ -227,35 +237,55 @@ function setInputPrice(){
 setInputPrice();
 
 
-function filterByPrice (prezzo) {
+function filterByPrice (array) {
 
-    let filter = data.filter((annuncio)=> annuncio.price <= prezzo);
+    let filtered = array.filter((annuncio)=> annuncio.price <= +(inputPrice.value));
 
-    showCards (filter);
+    console.log(filtered);
+
+    return filtered;
 }
 
 inputPrice.addEventListener('input', ()=>{
 
-filterByPrice(inputPrice.value);
-
 incrementNumber.innerHTML = inputPrice.value;
+
+globalFilter();
+
 
 })
 
+
+
 let wordInput = document.querySelector ('#wordInput');
 
-function filterByWord (nome){
+function filterByWord (array){
+
+    let nome = wordInput.value;
 
 
-    let filtered = data.filter((annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()));
+    let filtered = array.filter((annuncio)=> annuncio.name.toLowerCase().includes(nome.toLowerCase()));
 
-    showCards(filtered);
+    return filtered;
 }
 
 wordInput.addEventListener('input', ()=>{
 
-    filterByWord(wordInput.value);
+    globalFilter();
 
 })
+
+
+function globalFilter(){
+    
+    let filteredByCategory = filterByCategory(data);
+
+    let filteredByPrice = filterByPrice(filteredByCategory);
+
+    let filteredByWord = filterByWord(filteredByPrice);
+
+    showCards(filteredByWord);
+
+}
 
 })
