@@ -232,3 +232,80 @@ body{
 
 
 }
+
+
+.circle{
+
+    height: 400px;
+    width: 400px;
+    
+    border-radius: 50%;
+    border: 10px solid #22223b; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+}
+
+.opener{
+
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #22223b;
+
+    
+    
+    
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 1; 
+    background-color: #6d6875;
+    cursor: pointer;
+
+}
+
+
+.moved{
+
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid #22223b;
+    position: absolute;
+    transition: 1s;
+
+    
+    background-size: cover;
+
+    
+    
+    
+}
+
+
+.teacher-card{
+
+    height: 300px;
+    width: 300px;
+
+    border-radius: 20px;
+    /* background-image: url(./media/persona1-removebg-preview.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid #22223b;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
